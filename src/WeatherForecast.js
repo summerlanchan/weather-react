@@ -4,41 +4,41 @@ import "./WeatherForecast.css";
 
 export default function WeatherForecast() {
   return (
-    <div class="card">
-      <div class="card-body weather-days">
-        <div class="row row-cols-2">
-          <div class="col-2">
-            <h4 class="saturday" />
+    <div className="card">
+      <div className="card-body weather-days">
+        <div className="row row-cols-2">
+          <div className="col-2">
+            <h4 className="saturday" />
             SAT <br /> <br />
             &#9728;&#65039;
             <br /> <br />
             <p>35&#8451; 24&#8451;</p>
           </div>
 
-          <div class="col-2">
-            <h4 class="sunday" />
+          <div className="col-2">
+            <h4 className="sunday" />
             SUN <br /> <br />
             &#9728;&#65039;
             <br /> <br />
             <p>34&#8451; 24&#8451;</p>{" "}
           </div>
           <br />
-          <div class="col-2">
-            <h4 class="monday" />
+          <div className="col-2">
+            <h4 className="monday" />
             MON <br /> <br />
             &#9728;&#65039;
             <br /> <br /> <p>35&#8451; 24&#8451;</p>
           </div>
           <br />
-          <div class="col-2">
-            <h4 class="tuesday" />
+          <div className="col-2">
+            <h4 className="tuesday" />
             TUE <br /> <br />
             &#9728;&#65039;
             <br /> <br /> <p>34&#8451; 24&#8451;</p>{" "}
           </div>
           <br />
-          <div class="col-2">
-            <h4 class="wednesday" />
+          <div className="col-2">
+            <h4 className="wednesday" />
             WED <br /> <br />
             &#9728;&#65039;
             <br /> <br /> <p>32&#8451; 25&#8451;</p>{" "}
