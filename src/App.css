@@ -1,3 +1,26 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(
+    180.3deg,
+    rgb(214, 224, 255) 37.2%,
+    rgb(254, 168, 168) 137.3%
+  );
+  max-width: 75%;
+}
+button {
+  background: #84c0fe;
+  color: #42a5f5;
+  border-radius: 20px;
+  margin: 0 auto;
+  border: 1px solid;
+}
+.row {
+  margin-top: 35px;
+}
+.city-form {
+  margin-left: 50px;
+  padding-top: 5px;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +58,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+li {
+  list-style: none;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherApp() {
   const [city, setCity] = useState("");
@@ -29,14 +30,14 @@ export default function WeatherApp() {
   }
 
   let form = (
-    <div>
+    <div className="city-form">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Enter your city..."
           onChange={updateCity}
         />
-        <button type="submit">Search</button>
+        <button type="submit">Search📺</button>
       </form>
     </div>
   );
@@ -57,6 +58,7 @@ export default function WeatherApp() {
             <img src={weather.icon} alt="icon" />
           </li>
         </ul>
+        <WeatherForecast />
       </div>
     );
   } else {
