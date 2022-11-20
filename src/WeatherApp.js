@@ -1,27 +1,26 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function WeatherApp(event) {
-  const [city, setCity] = useState(" ");
+export default function WeatherApp() {
+  const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
-  const [weather, setWeather] = useState("null");
+  const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
-    setLoaded = true;
+    setLoaded(true);
     setWeather({
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      icon: "http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png",
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    apiUrl =
-      "https://api.openweathermap.org/data/2.5/weather?q={city}&appid={apiKey}";
-    apiKey = "3499ef150985eccadd080ff408a018df";
+    let apiKey = "7b40952ca13f5d687e1b65fcac145eab";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
 
@@ -42,15 +41,19 @@ export default function WeatherApp(event) {
     </div>
   );
 
-  if (loaded === true) {
+  if (loaded) {
     return (
       <div>
         {form}
         <ul>
+          <li>Temperature:{Math.round(weather.temperature)} C</li>
           <li>
-            Temperature:{Math.round(response.data.main.temp)} C Humidity:{" "}
-            {weather.humidity}% Description:{weather.description}
-            Wind: {weather.wind} km/h
+            Humidity:
+            {weather.humidity}%
+          </li>
+          <li>Description:{weather.description}</li>
+          <li>Wind: {weather.wind} km/h</li>
+          <li>
             <img src={weather.icon} alt="icon" />
           </li>
         </ul>
